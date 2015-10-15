@@ -51,7 +51,17 @@ public class Login {
 				JOptionPane.showMessageDialog(null, "Incorrect account type");
 			}
 		}while(loggedin==false);
-		JOptionPane.showMessageDialog(null, "Welcome "+User[UserIndex]+"!");
+		switch (Account[UserIndex]){
+		case "Admin":
+			JOptionPane.showMessageDialog(null, "Welcome Admin! You can update and read files.");
+			break;
+		case "Student":
+			JOptionPane.showMessageDialog(null, "Welcome Student! You can only read files.");
+			break;
+		case "Staff":
+			JOptionPane.showMessageDialog(null, "Welcome Staff! You can update, read, add, and delete files.");
+			break;
+		}
 	}
 }
 
